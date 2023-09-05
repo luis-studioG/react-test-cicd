@@ -1,15 +1,16 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen, } from "@testing-library/react";
+import { test, expect } from "@jest/globals";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renders learn react link", () => {
   render(<App />);
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
 
-test('renders the H1 title', () => {
-  const { getByText } = render(<App />);
-  const h1 = getByText(/Learning AWS CodeBuild and CodeDeploy/i);
+test("renders the H1 title", () => {
+  render(<App />);
+  const h1 = screen.getByText(/Learning AWS CodeBuild and CodeDeploy/i);
   expect(h1).toBeInTheDocument();
 });
 

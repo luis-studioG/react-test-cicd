@@ -1,12 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import React from 'react';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 // import { render } from 'react-dom'
-window.React = React
+window.React = React;
 
-
-export const App = () => {
-  const {REACT_APP_BUSINESS_COUNTRY} = process.env
+export const App = (): JSX.Element => {
+  const { REACT_APP_BUSINESS_COUNTRY } = process.env;
 
   return (
     <div className="App">
@@ -23,10 +22,12 @@ export const App = () => {
         >
           Learn React
         </a>
-        <h1>Learning AWS CodeBuild and CodeDeploy - {REACT_APP_BUSINESS_COUNTRY}</h1>
+        <h1>
+          Learning AWS CodeBuild and CodeDeploy - {REACT_APP_BUSINESS_COUNTRY}
+        </h1>
       </header>
     </div>
   );
-}
+};
 
 export default App;
