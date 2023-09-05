@@ -1,8 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+// import { render } from 'react-dom'
+window.React = React
 
-function App() {
+
+export const App = () => {
   const {REACT_APP_BUSINESS_COUNTRY} = process.env
 
   return (
@@ -20,8 +23,8 @@ function App() {
         >
           Learn React
         </a>
+        <h1>Learning AWS CodeBuild and CodeDeploy - {REACT_APP_BUSINESS_COUNTRY}</h1>
       </header>
-      <h1>Learning AWS CodeBuild and CodeDeploy - {REACT_APP_BUSINESS_COUNTRY}</h1>
     </div>
   );
 }
