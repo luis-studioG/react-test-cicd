@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const country = import.meta.env.REACT_BUSINESS_COUNTRY;
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <h1>Learning AWS CodeBuild and CodeDeploy - {country}</h1>
     </div>
   );
 }
