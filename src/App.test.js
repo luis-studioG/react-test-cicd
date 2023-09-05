@@ -5,7 +5,6 @@ test('renders learn react link', () => {
   render(<App />);
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
-  expect().toBeInTheDocument();
 });
 
 test('renders the H1 title', () => {
@@ -14,16 +13,16 @@ test('renders the H1 title', () => {
   expect(h1).toBeInTheDocument();
 });
 
-// Mock the import.meta.env object
-jest.mock('react', () => {
-  return {
-    ...jest.requireActual('react'),
-    import: {
-      meta: {
-        env: {
-          REACT_BUSINESS_COUNTRY: 'PT', // Set the desired value for testing
-        },
-      },
-    },
-  };
-});
+// // Mock the import.meta.env object
+// jest.mock('react', () => {
+//   return {
+//     ...jest.requireActual('react'),
+//     import: {
+//       meta: {
+//         env: {
+//           REACT_BUSINESS_COUNTRY: 'PT', // Set the desired value for testing
+//         },
+//       },
+//     },
+//   };
+// });
