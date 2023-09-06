@@ -1,5 +1,5 @@
 import { render, screen, } from "@testing-library/react";
-import { test, expect } from "@jest/globals";
+import { test, expect, afterAll } from "@jest/globals";
 import App from "./App";
 
 test("renders learn react link", () => {
@@ -27,3 +27,10 @@ test("renders the H1 title", () => {
 //     },
 //   };
 // });
+
+// Add an exit condition using afterAll
+afterAll(() => {
+  // Your exit condition or cleanup code here
+  console.log("All tests have completed. This code will run after all tests.");
+  // For example, you can close database connections or clean up resources.
+});
