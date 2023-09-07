@@ -1,34 +1,23 @@
-import { render, screen, } from "@testing-library/react";
-import { test, expect, afterAll } from "@jest/globals";
+
+import React from "react";
+import { render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("App Component", () => {
+  it("renders the title with the business country", () => {
+    process.env.REACT_APP_BUSINESS_COUNTRY = "PT";
+    render(<App />);
+    const h1 = screen.getByText(/Learning AWS CodeBuild and CodeDeploy - PT/i);
+    expect(h1).toBeInTheDocument();
+  });
+
+  it("renders the 'Learn React' link", () => {
+    render(<App />);
+    const link = screen.getByText(/Learn React/i);
+    expect(link).toBeInTheDocument();
+  });
 });
 
-test("renders the H1 title", () => {
-  render(<App />);
-  const h1 = screen.getByText(/Learning AWS CodeBuild and CodeDeploy/i);
-  expect(h1).toBeInTheDocument();
-});
-
-// // Mock the import.meta.env object
-// jest.mock('react', () => {
-//   return {
-//     ...jest.requireActual('react'),
-//     import: {
-//       meta: {
-//         env: {
-//           REACT_BUSINESS_COUNTRY: 'PT', // Set the desired value for testing
-//         },
-//       },
-//     },
-//   };
-// });
-
-// Add an exit condition using afterAll
 afterAll(() => {
   // Your exit condition or cleanup code here
   console.log("All tests have completed. This code will run after all tests.");
